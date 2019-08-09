@@ -4,22 +4,19 @@ addons:
   apt:
     packages:
     - aria2
+    - bsdtar
     - zip
     - unzip
-before_script:
-- sudo apt-get update -qq
-- sudo apt-get install aria2 zip unzip check -qq
 script:
 - source ./env.sh
-- "${DLR} ${ROOTFS_URL} -o ${ROOTFS_TGZ}"
+- "${DLR} ${ROOTFS_URL} -o ${ROOTFS_IXZ}"
 - "${DLR} ${LNCR_URL} -o ${LNCR_ZIP}"
 - 
 - unzip ${LNCR_ZIP} ${LNCR_FN}
-- sudo tar -zxpf ${ROOTFS_TGZ}
+- bsdtar -xf ${ROOTFS_IXZ}
 - 
-- sudo losetup --partscan /dev/loop0 ${ROOTFS_FN}
 - sudo mkdir mntfs
-- sudo mount -o ro /dev/loop0p1 mntfs
+- sudo mount images/rootfs.img mntfs
 - sudo cp -a mntfs rootfs
 - sudo umount mntfs
 - 
@@ -27,25 +24,24 @@ script:
   of this file, remove this line." | sudo tee ./rootfs/etc/resolv.conf
 - 
 - cd rootfs
-- sudo tar -zcpf ../rootfs.tar.gz *
-- sudo chown `id -un` ../rootfs.tar.gz
+- sudo tar -zcpf ../rootfs.tar.gz --hard-dereference *
 - cd ..
 - 
 - mkdir out
 - mv -f ${LNCR_FN} ./out/
 - mv -f rootfs.tar.gz ./out/
 - cd out
-- zip CentOS.zip *
+- zip Clear.zip *
 - cd ..
 notifications:
   email: false
 deploy:
   provider: releases
   api_key:
-    secure: c3go1osy/T3T7qhZvQQnxR09ck5anmwGVQyQtrlx9B6QnQhLRF0NpV0CYt4PD6/4MUedCC0/EFmZpVogUyea/3F+F/j2fxsg4xUdm6gUNBKUH5wfdbHEW01JVfvwgtlZKFZmCrgNxS931yVM9yvPv02uPC4qjv2wP459wUbnEq5UkhOSaNd8rra1kaUnHdvqlJsBEKc7+lcElRuW5gFMknLXD2X3irXYr5+L2idVSmmApDwU9ufN5zAEUsh+4s3W7YZVxkrYuR2qZVHvA6jaFkKmdkO0giBaz9Tpz6UVErkWNtR6F3OWtjG3dj9dMOSIX4yjuugyDxhQsHZIbErg8TGYIIoW3tMydbgwmTOOCSKZoPSg07kByjiAQSlyVe9ISevUwyCU1TTcnQRF93/CMdDV7bnT8OAfFMkmTL/vqGNyijz5QhRVSswP8jfITx/L1jEXszEcB6hiTZu0y68tBy5ovW3o/V1Yhf03Ny941LG4AMkEuQytw5kALH8r/GKBy1HEbxSVvlaHb1ygwPh2AZoANXPGjvpBZ4gh3+95Tm0W2hMnPkbHtlXMQjfxVHabS96GB6l174aWxHD/u97bbL9AUUr2J2wx5LOoQf9Bf5mMRfPvHn8+JWgqLrO2D4LtOxNF2cGyip61uaMO36wyhbUyeFOMJEeGCNJv1wGVtK8=
-  file: out/CentOS.zip
+    secure: 0V4OswSYOn9bpxKMRJN0oxU4yTvkr6YHiJ/69HYl9pay3Z3onBdl5pQWfa/HyQgVpS/uCPK+DfoIMmc2oBa9nRqz0L6wCnlsvTutryKGf6M5fbsq/YiCAvAX3ItNQ2lb1oUwc7QDkXspGfLT9VqXbgGQoETSfq9yMuTHnDXuAP14/T+GojFkylFNDHvUCAh8j/s4oAqiP+4IMFe8YNOMSGJ42ms5EazFATtbqYaf+7lF3DrCL32yKY7gQkadvnKMMcACqO16v/50iujc5n7xIiJ90uqVgUJcRTNvVPwUIF9DQCqKhBb2go/d/5aqbP/+RmVAjlbUPr4O3t0QmuBNIG76GFinsp5J2wxtWDkPPAQZIXyJmVosgviPj0i40Z5M5U31+ael+3Bya0ew/Xn7YMOfkiH3NMDYxFOp3mzy2TM2KfXyOiETssd5DOdB8QnVEgTe6mhIYTJtbKiHgjmp9jQQ/5eHXGkMmIt82Ca/b0UTEtW5atvQ8Wzl2MHwzqaxnt4ORjVnuO9E/QxNNJsxaf6f9ytgHbY2HXVtaPjFzemAI7/LeWYKkkEdZvg+Mx5XzNlIiAkJipBPwxwA2VsJ9OwnPkka+1edqWLU6bD8tADq3bXJLol78F8ZcAK2pme/J/Xfuj9zD+qXfikARP1OfO9tfoIZ5ltM/vBzOgzEEmE=
+  file: out/Clear.zip
   on:
-    repo: yuk7/CentWSL
+    repo: wight554/ClearWSL
     tags: true
     all_branches: true
   skip_cleanup: true

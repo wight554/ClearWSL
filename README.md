@@ -1,14 +1,14 @@
-# CentWSL
-CentOS on WSL (Windows 10 FCU or later)
+# ClearWSL
+Clear Linux on WSL (Windows 10 FCU or later)
 based on [wsldl](https://github.com/yuk7/wsldl)
 
 ![screenshot](https://raw.githubusercontent.com/wiki/yuk7/wsldl/img/Cent_Arch_Alpine.png)
-[![Build Status](https://img.shields.io/travis/yuk7/CentWSL.svg?style=flat-square)](https://travis-ci.org/yuk7/CentWSL)
-[![Github All Releases](https://img.shields.io/github/downloads/yuk7/CentWSL/total.svg?style=flat-square)](https://github.com/yuk7/CentWSL/releases/latest)
+[![Build Status](https://img.shields.io/travis/wight554/ClearWSL.svg?style=flat-square)](https://travis-ci.com/wight554/ClearWSL)
+[![Github All Releases](https://img.shields.io/github/downloads/wight554/ClearWSL/total.svg?style=flat-square)](https://github.com/wight554/ClearWSL/releases/latest)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-![License](https://img.shields.io/github/license/yuk7/CentWSL.svg?style=flat-square)
+![License](https://img.shields.io/github/license/wight554/ClearWSL.svg?style=flat-square)
 
-### [Download](https://github.com/yuk7/CentWSL/releases/latest)
+### [Download](https://github.com/wight554/ClearWSL/releases/latest)
 
 
 ## Requirements
@@ -16,11 +16,11 @@ based on [wsldl](https://github.com/yuk7/wsldl)
 * Windows Subsystem for Linux feature is enabled.
 
 ## Install
-#### 1. [Download](https://github.com/yuk7/CentWSL/releases/latest) installer zip
+#### 1. [Download](https://github.com/wight554/ClearWSL/releases/latest) installer zip
 
 #### 2. Extract all files in zip file to same directory
 
-#### 3.Run CentOS.exe to Extract rootfs and Register to WSL
+#### 3.Run Clear.exe to Extract rootfs and Register to WSL
 Exe filename is using to the instance name to register.
 If you rename it you can register with a diffrent name and have multiple installs.
 
@@ -60,6 +60,6 @@ Usage :
 
 #### How to uninstall instance
 ```dos
->CentOS.exe clean
+>Clear.exe clean
 
 ```

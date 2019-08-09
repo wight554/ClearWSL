@@ -1,17 +1,14 @@
 #!/bin/bash
 
-ARCH="x86_64"
-OS_VER="7"
-ROOTFS_VER="1905"
-ROOTFS_FN="CentOS-${OS_VER}-${ARCH}-GenericCloud-${ROOTFS_VER}.raw"
-ROOTFS_TGZ="${ROOTFS_FN}.tar.gz"
-ROOTFS_URL="http://cloud.centos.org/centos/7/images/${ROOTFS_TGZ}"
+ROOTFS_VER="30730"
+ROOTFS_FN="clear-${ROOTFS_VER}-live-server"
+ROOTFS_IXZ="${ROOTFS_FN}.iso.xz"
+ROOTFS_URL="https://cdn.download.clearlinux.org/releases/${ROOTFS_VER}/clear/${ROOTFS_IXZ}"
 
-LNCR_BLD="19070200"
+LNCR_BLD="19070200-clear"
 LNCR_ZIP="icons.zip"
-LNCR_FN="CentOS.exe"
-LNCR_URL="https://github.com/yuk7/wsldl/releases/download/${LNCR_BLD}/${LNCR_ZIP}"
-
+LNCR_FN="Clear.exe"
+LNCR_URL="https://github.com/wight554/wsldl/releases/download/${LNCR_BLD}/${LNCR_ZIP}"
 
 if type curl >/dev/null 2>&1 ;then
     DLR="curl"
@@ -22,5 +19,3 @@ fi
 if type aria2c >/dev/null 2>&1; then
     DLR="aria2c -x4"
 fi
-
-
