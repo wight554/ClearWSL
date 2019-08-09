@@ -1,9 +1,8 @@
 #!/bin/bash
 
-ROOTFS_VER="30730"
-ROOTFS_FN="clear-${ROOTFS_VER}-live-server"
-ROOTFS_IXZ="${ROOTFS_FN}.iso.xz"
-ROOTFS_URL="https://cdn.download.clearlinux.org/releases/${ROOTFS_VER}/clear/${ROOTFS_IXZ}"
+ROOTFS_VER="30650"
+ROOTFS_TXZ="base.tar.xz"
+ROOTFS_URL="https://github.com/clearlinux/docker-brew-clearlinux/raw/base-${ROOTFS_VER}/${ROOTFS_TXZ}"
 
 LNCR_BLD="19070200-clear"
 LNCR_ZIP="icons.zip"
