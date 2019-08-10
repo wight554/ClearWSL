@@ -2,7 +2,7 @@
 
 ROOTFS_VER="30650"
 ROOTFS_TXZ="base.tar.xz"
-ROOTFS_URL="https://github.com/clearlinux/docker-brew-clearlinux/raw/base-${ROOTFS_VER}/${ROOTFS_TXZ}"
+ROOTFS_SRC="https://raw.githubusercontent.com/clearlinux/docker-brew-clearlinux/"
 
 LNCR_BLD="19070200-clear"
 LNCR_ZIP="icons.zip"
@@ -17,4 +17,10 @@ if type wget >/dev/null 2>&1;then
 fi
 if type aria2c >/dev/null 2>&1; then
     DLR="aria2c -x4"
+fi
+
+if [[ "$(curl ${ROOTFS_SRC}/base/VERSION)" == "${ROOTFS_VER}" ]]; then
+    ROOTFS_URL="${ROOTFS_SRC}/base/${ROOTFS_TXZ}"
+else
+    ROOTFS_URL="${ROOTFS_SRC}/base-${ROOTFS_VER}/${ROOTFS_TXZ}"
 fi
