@@ -3,7 +3,7 @@ Clear Linux on WSL (Windows 10 FCU or later)
 based on [wsldl](https://github.com/yuk7/wsldl)
 
 ![screenshot](https://raw.githubusercontent.com/wiki/yuk7/wsldl/img/Cent_Arch_Alpine.png)
-[![Build Status](https://img.shields.io/travis/wight554/ClearWSL.svg?style=flat-square)](https://travis-ci.com/wight554/ClearWSL)
+[![Build Status](https://img.shields.io/travis/com/wight554/ClearWSL.svg?style=flat-square)](https://travis-ci.com/wight554/ClearWSL)
 [![Github All Releases](https://img.shields.io/github/downloads/wight554/ClearWSL/total.svg?style=flat-square)](https://github.com/wight554/ClearWSL/releases/latest)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 ![License](https://img.shields.io/github/license/wight554/ClearWSL.svg?style=flat-square)
