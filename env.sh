@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ROOTFS_VER="30850"
+ROOTFS_VER="30890"
 ROOTFS_TXZ="base.tar.xz"
 ROOTFS_SRC="https://raw.githubusercontent.com/clearlinux/docker-brew-clearlinux/"
 
