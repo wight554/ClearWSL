@@ -4,10 +4,10 @@ ROOTFS_VER="30850"
 ROOTFS_TXZ="base.tar.xz"
 ROOTFS_SRC="https://raw.githubusercontent.com/clearlinux/docker-brew-clearlinux/"
 
-LNCR_BLD="19070200-clear"
+LNCR_BLD="19082500"
 LNCR_ZIP="icons.zip"
 LNCR_FN="Clear.exe"
-LNCR_URL="https://github.com/wight554/wsldl/releases/download/${LNCR_BLD}/${LNCR_ZIP}"
+LNCR_URL="https://github.com/yuk7/wsldl/releases/download/${LNCR_BLD}/${LNCR_ZIP}"
 
 if type curl >/dev/null 2>&1 ;then
     DLR="curl"
