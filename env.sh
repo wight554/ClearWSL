@@ -1,10 +1,10 @@
 #!/bin/bash
 
-ROOTFS_VER="31110"
+ROOTFS_VER="32330"
 ROOTFS_TXZ="base.tar.xz"
 ROOTFS_SRC="https://raw.githubusercontent.com/clearlinux/docker-brew-clearlinux/"
 
-LNCR_BLD="19083100"
+LNCR_BLD="20013100"
 LNCR_ZIP="icons.zip"
 LNCR_FN="Clear.exe"
 LNCR_URL="https://github.com/yuk7/wsldl/releases/download/${LNCR_BLD}/${LNCR_ZIP}"
