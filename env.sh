@@ -4,7 +4,7 @@ ROOTFS_VER="33490"
 ROOTFS_TXZ="base.tar.xz"
 ROOTFS_SRC="https://raw.githubusercontent.com/clearlinux/docker-brew-clearlinux/"
 
-LNCR_BLD="20040300"
+LNCR_BLD="20100500"
 LNCR_ZIP="icons.zip"
 LNCR_FN="Clear.exe"
 LNCR_URL="https://github.com/yuk7/wsldl/releases/download/${LNCR_BLD}/${LNCR_ZIP}"
